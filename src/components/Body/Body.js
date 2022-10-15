@@ -16,7 +16,7 @@ function Body() {
     education: "Education",
     achievement: "Achievements",
     summary: "Summary",
-    other: "Other",
+    other: "Other"
   };
   const resumeRef = useRef();
 
@@ -25,38 +25,38 @@ function Body() {
     [sections.basicInfo]: {
       id: sections.basicInfo,
       sectionTitle: sections.basicInfo,
-      detail: {},
+      detail: {}
     },
     [sections.workExp]: {
       id: sections.workExp,
       sectionTitle: sections.workExp,
-      details: [],
+      details: []
     },
     [sections.project]: {
       id: sections.project,
       sectionTitle: sections.project,
-      details: [],
+      details: []
     },
     [sections.education]: {
       id: sections.education,
       sectionTitle: sections.education,
-      details: [],
+      details: []
     },
     [sections.achievement]: {
       id: sections.achievement,
       sectionTitle: sections.achievement,
-      points: [],
+      points: []
     },
     [sections.summary]: {
       id: sections.summary,
       sectionTitle: sections.summary,
-      detail: "",
+      detail: ""
     },
     [sections.other]: {
       id: sections.other,
       sectionTitle: sections.other,
-      detail: "",
-    },
+      detail: ""
+    }
   });
 
   return (
