@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { X } from "react-feather";
+import { ResumeContext } from "../../context/context";
 
 import InputControl from "../InputControl/InputControl";
 
@@ -25,7 +26,7 @@ function Editor(props) {
     linkedin: activeInformation?.detail?.linkedin || "",
     github: activeInformation?.detail?.github || "",
     phone: activeInformation?.detail?.phone || "",
-    email: activeInformation?.detail?.email || "",
+    email: activeInformation?.detail?.email || ""
   });
 
   const handlePointUpdate = (value, index) => {
@@ -63,7 +64,7 @@ function Editor(props) {
           onChange={(event) =>
             setValues((prev) => ({
               ...prev,
-              certificationLink: event.target.value,
+              certificationLink: event.target.value
             }))
           }
         />
@@ -362,7 +363,7 @@ function Editor(props) {
           linkedin: values.linkedin,
           github: values.github,
           email: values.email,
-          phone: values.phone,
+          phone: values.phone
         };
 
         props.setInformation((prev) => ({
@@ -370,8 +371,8 @@ function Editor(props) {
           [sections.basicInfo]: {
             ...prev[sections.basicInfo],
             detail: tempDetail,
-            sectionTitle,
-          },
+            sectionTitle
+          }
         }));
         break;
       }
@@ -383,7 +384,7 @@ function Editor(props) {
           endDate: values.endDate,
           companyName: values.companyName,
           location: values.location,
-          points: values.points,
+          points: values.points
         };
         const tempDetails = [...information[sections.workExp]?.details];
         tempDetails[activeDetailIndex] = tempDetail;
@@ -393,8 +394,8 @@ function Editor(props) {
           [sections.workExp]: {
             ...prev[sections.workExp],
             details: tempDetails,
-            sectionTitle,
-          },
+            sectionTitle
+          }
         }));
         break;
       }
@@ -404,7 +405,7 @@ function Editor(props) {
           title: values.title,
           overview: values.overview,
           github: values.github,
-          points: values.points,
+          points: values.points
         };
         const tempDetails = [...information[sections.project]?.details];
         tempDetails[activeDetailIndex] = tempDetail;
@@ -414,8 +415,8 @@ function Editor(props) {
           [sections.project]: {
             ...prev[sections.project],
             details: tempDetails,
-            sectionTitle,
-          },
+            sectionTitle
+          }
         }));
         break;
       }
@@ -424,7 +425,7 @@ function Editor(props) {
           title: values.title,
           college: values.college,
           startDate: values.startDate,
-          endDate: values.endDate,
+          endDate: values.endDate
         };
         const tempDetails = [...information[sections.education]?.details];
         tempDetails[activeDetailIndex] = tempDetail;
@@ -434,8 +435,8 @@ function Editor(props) {
           [sections.education]: {
             ...prev[sections.education],
             details: tempDetails,
-            sectionTitle,
-          },
+            sectionTitle
+          }
         }));
         break;
       }
@@ -447,8 +448,8 @@ function Editor(props) {
           [sections.achievement]: {
             ...prev[sections.achievement],
             points: tempPoints,
-            sectionTitle,
-          },
+            sectionTitle
+          }
         }));
         break;
       }
@@ -460,8 +461,8 @@ function Editor(props) {
           [sections.summary]: {
             ...prev[sections.summary],
             detail: tempDetail,
-            sectionTitle,
-          },
+            sectionTitle
+          }
         }));
         break;
       }
@@ -473,8 +474,8 @@ function Editor(props) {
           [sections.other]: {
             ...prev[sections.other],
             detail: tempDetail,
-            sectionTitle,
-          },
+            sectionTitle
+          }
         }));
         break;
       }
@@ -492,8 +493,8 @@ function Editor(props) {
       ...prev,
       [sections[activeSectionKey]]: {
         ...information[sections[activeSectionKey]],
-        details: details,
-      },
+        details: details
+      }
     }));
     setActiveDetailIndex(details?.length - 1);
   };
@@ -508,8 +509,8 @@ function Editor(props) {
       ...prev,
       [sections[activeSectionKey]]: {
         ...information[sections[activeSectionKey]],
-        details: details,
-      },
+        details: details
+      }
     }));
 
     setActiveDetailIndex((prev) => (prev === index ? 0 : prev - 1));
@@ -557,7 +558,7 @@ function Editor(props) {
       phone: activeInfo?.detail?.phone || "",
       email: activeInfo?.detail?.email || "",
       summary: typeof activeInfo?.detail !== "object" ? activeInfo.detail : "",
-      other: typeof activeInfo?.detail !== "object" ? activeInfo.detail : "",
+      other: typeof activeInfo?.detail !== "object" ? activeInfo.detail : ""
     });
   }, [activeSectionKey]);
 
@@ -583,7 +584,7 @@ function Editor(props) {
       title: activeInfo.details[activeDetailIndex]?.title || "",
       linkedin: activeInfo.details[activeDetailIndex]?.linkedin || "",
       github: activeInfo.details[activeDetailIndex]?.github || "",
-      college: activeInfo.details[activeDetailIndex]?.college || "",
+      college: activeInfo.details[activeDetailIndex]?.college || ""
     });
   }, [activeDetailIndex]);
 
