@@ -6,12 +6,13 @@ import {
   Linkedin,
   MapPin,
   Paperclip,
-  Phone,
+  Phone
 } from "react-feather";
 
 import styles from "./Resume.module.css";
 
 const Resume = forwardRef((props, ref) => {
+  console.log(ref);
   const information = props.information;
   const sections = props.sections;
   const containerRef = useRef();
@@ -27,7 +28,7 @@ const Resume = forwardRef((props, ref) => {
     education: information[sections.education],
     basicInfo: information[sections.basicInfo],
     summary: information[sections.summary],
-    other: information[sections.other],
+    other: information[sections.other]
   };
 
   const getFormattedDate = (value) => {
@@ -255,7 +256,7 @@ const Resume = forwardRef((props, ref) => {
           <p className={styles.overview}>{info?.other?.detail}</p>
         </div>
       </div>
-    ),
+    )
   };
 
   const swapSourceTarget = (source, target) => {
@@ -288,7 +289,7 @@ const Resume = forwardRef((props, ref) => {
   useEffect(() => {
     setColumns([
       [sections.project, sections.education, sections.summary],
-      [sections.workExp, sections.achievement, sections.other],
+      [sections.workExp, sections.achievement, sections.other]
     ]);
   }, []);
 

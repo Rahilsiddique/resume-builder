@@ -1,6 +1,6 @@
 .container {
   --color: #239ce2;
-  /* min-width: 700px; */
+  min-width: 700px;
   max-width: 850px;
   margin: 0 auto;
   flex: 1.2;
@@ -11,6 +11,12 @@
   flex-direction: column;
   gap: 30px;
   padding: 30px;
+}
+
+/* style of p tag */
+p {
+  margin: 2px;
+  padding: 2px;
 }
 
 .header {
