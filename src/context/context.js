@@ -49,14 +49,8 @@ const initialState = {
   }
 };
 
-const thing = "thing";
-
 export const ResumeContext = createContext(initialState);
 
 export const Provider = ({ children }) => {
-  return (
-    <ResumeContext.Provider value={{ thing }}>
-      {children}
-    </ResumeContext.Provider>
-  );
+  return <ResumeContext.Provider value={{}}>{children}</ResumeContext.Provider>;
 };
