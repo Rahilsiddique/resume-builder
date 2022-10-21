@@ -1,12 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import { X } from "react-feather";
-import { ResumeContext } from "../../context/context";
+import resumeContext from "../../context/context";
 
 import InputControl from "../InputControl/InputControl";
 
 import styles from "./Editor.module.css";
 
 function Editor(props) {
+  const { onResumeUpdate } = useContext(resumeContext);
+
   const sections = props.sections;
   const information = props.information;
 

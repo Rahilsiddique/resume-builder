@@ -12,7 +12,7 @@ import {
 import styles from "./Resume.module.css";
 
 const Resume = forwardRef((props, ref) => {
-  console.log(ref);
+  console.log(ref, props);
   const information = props.information;
   const sections = props.sections;
   const containerRef = useRef();
