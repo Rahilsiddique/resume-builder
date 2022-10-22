@@ -1,13 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
 import { X } from "react-feather";
 import resumeContext from "../../context/context";
+import Achievement from "../formSections/Achievement";
 
 import InputControl from "../InputControl/InputControl";
 
 import styles from "./Editor.module.css";
 
 function Editor(props) {
-  const { onResumeUpdate } = useContext(resumeContext);
+  const { onResumeUpdate, state, values, setValues } =
+    useContext(resumeContext);
 
   const sections = props.sections;
   const information = props.information;
@@ -22,14 +24,14 @@ function Editor(props) {
   const [sectionTitle, setSectionTitle] = useState(
     sections[Object.keys(sections)[0]]
   );
-  const [values, setValues] = useState({
-    name: activeInformation?.detail?.name || "",
-    title: activeInformation?.detail?.title || "",
-    linkedin: activeInformation?.detail?.linkedin || "",
-    github: activeInformation?.detail?.github || "",
-    phone: activeInformation?.detail?.phone || "",
-    email: activeInformation?.detail?.email || ""
-  });
+  // const [values, setValues] = useState({
+  //   name: activeInformation?.detail?.name || "",
+  //   title: activeInformation?.detail?.title || "",
+  //   linkedin: activeInformation?.detail?.linkedin || "",
+  //   github: activeInformation?.detail?.github || "",
+  //   phone: activeInformation?.detail?.phone || "",
+  //   email: activeInformation?.detail?.email || ""
+  // });
 
   const handlePointUpdate = (value, index) => {
     const tempValues = { ...values };
@@ -345,8 +347,10 @@ function Editor(props) {
         return projectBody;
       case sections.education:
         return educationBody;
+      // case sections.achievement:
+      //   return achievementsBody;
       case sections.achievement:
-        return achievementsBody;
+        return <Achievement />;
       case sections.summary:
         return summaryBody;
       case sections.other:
@@ -442,17 +446,23 @@ function Editor(props) {
         }));
         break;
       }
+      // case sections.achievement: {
+      //   const tempPoints = values.points;
+
+      //   props.setInformation((prev) => ({
+      //     ...prev,
+      //     [sections.achievement]: {
+      //       ...prev[sections.achievement],
+      //       points: tempPoints,
+      //       sectionTitle
+      //     }
+      //   }));
+      //   break;
+      // }
       case sections.achievement: {
         const tempPoints = values.points;
-
-        props.setInformation((prev) => ({
-          ...prev,
-          [sections.achievement]: {
-            ...prev[sections.achievement],
-            points: tempPoints,
-            sectionTitle
-          }
-        }));
+        console.log(tempPoints);
+        onResumeUpdate(tempPoints, sections.achievement);
         break;
       }
       case sections.summary: {
