@@ -27,5 +27,4 @@ Don't forget to give the project a star! Thanks again!
 ## Author
 - [Rahil](https://github.com/Rahilsiddique)
 
-ithub.com/Rahilsiddique)
 
