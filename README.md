@@ -1,5 +1,6 @@
 <h1 align="center">Resume Builder - ✌</h1>
-#### An app developed for creating a resume in few steps. <br> This app currently has only one format, but we have much bigger plans for it in the future. 
+
+### An app developed for creating a resume in few steps. <br> This app currently has only one format, but we have much bigger plans for it in the future. 
 
 
 ## Roadmap
