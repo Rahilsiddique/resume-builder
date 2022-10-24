@@ -1,5 +1,7 @@
 <h1 align="center">Resume Builder - ✌</h1>
 
+![Resume Builder-banner (2)](https://user-images.githubusercontent.com/75086395/197600498-2a225626-c62f-4daa-8dee-d302f48da1fa.png)
+
 ### An app developed for creating a resume in few steps. <br> This app currently has only one format, but we have much bigger plans for it in the future. 
 
 
