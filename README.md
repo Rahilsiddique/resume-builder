@@ -30,7 +30,7 @@ Don't forget to give the project a star! Thanks again!
 + Create a branch with **`git switch -c your-branch-name`**.
 + Open any code editor and **`run npm install`** and then **`npm start`**.
 
-If you haven't gone through this workflow before, you can check out [this GitHub tutorial](https://github.com/firstcontributions/first-contributions#readme).(highly recommend)
+If you haven't gone through this workflow before, you can check out [this GitHub tutorial](https://github.com/firstcontributions/first-contributions#readme) (highly recommend)
 
 ## Author
 - [Rahil](https://github.com/Rahilsiddique)
