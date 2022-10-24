@@ -24,8 +24,13 @@ Contributions are what make the open source community such an amazing place to l
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
 Don't forget to give the project a star! Thanks again!
 
+### Steps for contribution
++ Fork the project. 
++ Clone the project in your computer. Use **`git clone "link"`**.
++ Create a branch with **`git switch -c your-branch-name`**.
++ Open any code editor and **`run npm install`** and then **`npm start`**.
+
+If you haven't gone through this workflow before, you can check out [this GitHub tutorial](https://github.com/firstcontributions/first-contributions#readme).(highly recommend)
+
 ## Author
 - [Rahil](https://github.com/Rahilsiddique)
-
-ithub.com/Rahilsiddique)
-
