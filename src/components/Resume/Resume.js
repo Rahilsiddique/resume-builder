@@ -12,10 +12,11 @@ import {
 import styles from "./Resume.module.css";
 
 const Resume = forwardRef((props, ref) => {
-  console.log(ref);
   const information = props.information;
   const sections = props.sections;
   const containerRef = useRef();
+
+  console.log(information);
 
   const [columns, setColumns] = useState([[], []]);
   const [source, setSource] = useState("");

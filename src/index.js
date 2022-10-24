@@ -2,13 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import { Provider } from "./context/context";
+import ResumeState from "./context/ResumeState";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider>
+    <ResumeState>
       <App />
-    </Provider>
+    </ResumeState>
   </React.StrictMode>,
   document.getElementById("root")
 );
