@@ -11,10 +11,12 @@
   flex-direction: column;
   gap: 30px;
   padding: 30px;
+  box-sizing: border-box;
 }
 
 /* style of p tag */
-p {
+p,
+ul {
   margin: 2px;
   padding: 2px;
 }
