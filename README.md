@@ -15,7 +15,7 @@
 - You can use the project from this link - [Resume Builder](https://resume-builder-two-xi.vercel.app/)
 
 ## Built with
-- **React.js**
+- **React.js** <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png" height=20 align="center"/>
 
 ## Contributing
 
