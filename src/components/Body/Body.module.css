@@ -27,6 +27,7 @@
   display: flex;
   gap: 20px;
   padding: 0 30px;
+  cursor: pointer;
 }
 
 .colors .color {
@@ -35,7 +36,24 @@
   border-radius: 50%;
   background-color: #239ce2;
 }
+
 .colors .active {
+  border: 2px solid #000;
+}
+
+.fonts {
+  display: flex;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.fonts .font {
+  height: 36px;
+  width: 36px;
+  background-color: #9623e2;
+}
+
+.fonts .active {
   border: 2px solid #000;
 }
 
