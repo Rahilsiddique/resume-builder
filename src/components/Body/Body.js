@@ -61,6 +61,23 @@ function Body() {
 		},
 	})
 
+	// Check if resume is filled or not
+	const isResumeFilled = () => {
+		const basicInfo = Object.keys(resumeInformation[sections.basicInfo].detail)
+		const workExp = Object.keys(resumeInformation[sections.workExp].details)
+		const project = Object.keys(resumeInformation[sections.project].details)
+		const education = Object.keys(resumeInformation[sections.education].details)
+		const achievement = Object.keys(resumeInformation[sections.achievement].points)
+		const summary = resumeInformation[sections.summary].detail
+		const other = resumeInformation[sections.other].points
+
+		if (basicInfo.length === 0 || workExp.length === 0 || project.length === 0 || education.length === 0 || achievement.length === 0 || summary.length === 0 || other.length === 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	return (
 		<div className={styles.container}>
 			<p className={styles.heading}>Resume Builder</p>
@@ -88,7 +105,7 @@ function Body() {
 				<ReactToPrint
 					trigger={() => {
 						return (
-							<button>
+							<button style={{cursor: `${isResumeFilled()? "default": ""}`}} disabled={isResumeFilled()}>
 								Download <ArrowDown />
 							</button>
 						)
