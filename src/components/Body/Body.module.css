@@ -81,7 +81,7 @@
 .main {
   display: flex;
   /* flex-direction: column; */
-  gap: 30px;
+  gap: 20px;
   width: 100%;
   justify-content: space-between;
 }
