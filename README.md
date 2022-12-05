@@ -15,13 +15,6 @@
 ## Built with
 - **React.js** <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png" height=20 align="center"/>
 
-## Roadmap
-- [x] App creation
-- [x] (almost) Fixing problems
-- [ ] Adding more compatibility
-- [ ] Adding more formats
-- [ ] ???
-
 ## Contribution
 if you want to contribute to this project please refer [CONTRIBUTING.md](https://github.com/Rahilsiddique/resume-builder/blob/main/CONTRIBUTING.md)
 
