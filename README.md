@@ -12,7 +12,7 @@
 
 <img src="https://user-images.githubusercontent.com/75086395/197950622-296365fc-3da9-4e9a-955a-0738e8fb0f74.png" height="500"/>
 
-## Built with
+## tech stack
 - **React.js** <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png" height=20 align="center"/>
 
 ## Contribution
