@@ -1,13 +1,11 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, {  useEffect, useState } from "react";
 import { X } from "react-feather";
-import resumeContext from "../../context/context";
 
 import InputControl from "../InputControl/InputControl";
 
 import styles from "./Editor.module.css";
 
 function Editor(props) {
-  const { onResumeUpdate, values, setValues } = useContext(resumeContext);
 
   const sections = props.sections;
   const information = props.information;
@@ -31,6 +29,7 @@ function Editor(props) {
   //   email: activeInformation?.detail?.email || ""
   // });
 
+  const [values, setValues] = useState({})
   const handlePointUpdate = (value, index) => {
     const tempValues = { ...values };
     if (!Array.isArray(tempValues.points)) tempValues.points = [];
@@ -455,12 +454,6 @@ function Editor(props) {
         }));
         break;
       }
-      case sections.achievement: {
-        const tempPoints = values.points;
-        console.log(tempPoints);
-        onResumeUpdate(tempPoints, sections.achievement);
-        break;
-      }
       case sections.summary: {
         const tempDetail = values.summary;
 
@@ -486,6 +479,9 @@ function Editor(props) {
           }
         }));
         break;
+      }
+      default:{
+        console.log("ye");
       }
     }
   };
@@ -568,11 +564,11 @@ function Editor(props) {
       summary: typeof activeInfo?.detail !== "object" ? activeInfo.detail : "",
       other: typeof activeInfo?.detail !== "object" ? activeInfo.detail : ""
     });
-  }, [activeSectionKey]);
+  }, [activeSectionKey, information, sections]);
 
   useEffect(() => {
     setActiveInformation(information[sections[activeSectionKey]]);
-  }, [information]);
+  }, [information,sections,activeSectionKey]);
 
   useEffect(() => {
     const details = activeInformation?.details;
@@ -594,7 +590,7 @@ function Editor(props) {
       github: activeInfo.details[activeDetailIndex]?.github || "",
       college: activeInfo.details[activeDetailIndex]?.college || ""
     });
-  }, [activeDetailIndex]);
+  }, [activeDetailIndex, activeSectionKey, information, sections, activeInformation.details]);
 
   return (
     <div className={styles.container}>

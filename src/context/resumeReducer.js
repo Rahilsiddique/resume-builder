@@ -1,9 +1,9 @@
-import { ADD_DETAILS, DEL_DETAILS } from "./resumeAction";
+import { UPDATE_DETAILS } from "./resumeAction";
 
 const resumereducer = (state, action) => {
   console.log(state, action);
   switch (action.type) {
-    case ADD_DETAILS:
+    case UPDATE_DETAILS:
       return {
         ...state,
         [action.section]: {
@@ -12,8 +12,6 @@ const resumereducer = (state, action) => {
           sectionTitle: action.section
         }
       };
-    case DEL_DETAILS:
-      return {};
     default:
       return state;
   }

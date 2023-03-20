@@ -16,8 +16,6 @@ const Resume = forwardRef((props, ref) => {
   const sections = props.sections;
   const containerRef = useRef();
 
-  console.log(information);
-
   const [columns, setColumns] = useState([[], []]);
   const [source, setSource] = useState("");
   const [target, seTarget] = useState("");
@@ -314,7 +312,7 @@ const Resume = forwardRef((props, ref) => {
 
           <div className={styles.links}>
             {info.basicInfo?.detail?.email ? (
-              <a className={styles.link} type="email">
+              <a className={styles.link} type="email" >
                 <AtSign /> {info.basicInfo?.detail?.email}
               </a>
             ) : (
