@@ -20,15 +20,6 @@ function Editor(props) {
   const [sectionTitle, setSectionTitle] = useState(
     sections[Object.keys(sections)[0]]
   );
-  // const [values, setValues] = useState({
-  //   name: activeInformation?.detail?.name || "",
-  //   title: activeInformation?.detail?.title || "",
-  //   linkedin: activeInformation?.detail?.linkedin || "",
-  //   github: activeInformation?.detail?.github || "",
-  //   phone: activeInformation?.detail?.phone || "",
-  //   email: activeInformation?.detail?.email || ""
-  // });
-
   const [values, setValues] = useState({})
   const handlePointUpdate = (value, index) => {
     const tempValues = { ...values };
@@ -564,17 +555,18 @@ function Editor(props) {
       summary: typeof activeInfo?.detail !== "object" ? activeInfo.detail : "",
       other: typeof activeInfo?.detail !== "object" ? activeInfo.detail : ""
     });
-  }, [activeSectionKey, information, sections]);
+  }, [activeSectionKey]);
 
   useEffect(() => {
     setActiveInformation(information[sections[activeSectionKey]]);
-  }, [information,sections,activeSectionKey]);
+  }, [information]);
 
   useEffect(() => {
     const details = activeInformation?.details;
     if (!details) return;
-
+    
     const activeInfo = information[sections[activeSectionKey]];
+    console.log(activeInfo, details);
     setValues({
       overview: activeInfo.details[activeDetailIndex]?.overview || "",
       link: activeInfo.details[activeDetailIndex]?.link || "",
@@ -590,7 +582,7 @@ function Editor(props) {
       github: activeInfo.details[activeDetailIndex]?.github || "",
       college: activeInfo.details[activeDetailIndex]?.college || ""
     });
-  }, [activeDetailIndex, activeSectionKey, information, sections, activeInformation.details]);
+  }, [activeDetailIndex,]);
 
   return (
     <div className={styles.container}>
