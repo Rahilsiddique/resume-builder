@@ -8,12 +8,20 @@ import {
   Paperclip,
   Phone
 } from "react-feather";
+import { useResumeContext } from "../../context/Context";
 
 import styles from "./Resume.module.css";
 
 const Resume = forwardRef((props, ref) => {
   const information = props.information;
   const sections = props.sections;
+  
+  const {state, valuesT} = useResumeContext()
+
+  console.log(state,valuesT);
+
+  const basicInfo = state["Basic Info"]
+
   const containerRef = useRef();
 
   const [columns, setColumns] = useState([[], []]);
@@ -307,34 +315,35 @@ const Resume = forwardRef((props, ref) => {
     <div ref={ref} style={{ fontFamily: props.activeFont }}>
       <div ref={containerRef} className={styles.container}>
         <div className={styles.header}>
-          <p className={styles.heading}>{info.basicInfo?.detail?.name}</p>
-          <p className={styles.subHeading}>{info.basicInfo?.detail?.title}</p>
+          {/* <p className={styles.heading}>{info.basicInfo?.detail?.name}</p> */}
+          <p className={styles.heading}>{basicInfo.detail.name}</p>
+          <p className={styles.subHeading}>{basicInfo.detail.title}</p>
 
           <div className={styles.links}>
-            {info.basicInfo?.detail?.email ? (
+            {basicInfo?.detail?.email ? (
               <a className={styles.link} type="email" >
-                <AtSign /> {info.basicInfo?.detail?.email}
+                <AtSign /> {basicInfo?.detail?.email}
               </a>
             ) : (
               <span />
             )}
-            {info.basicInfo?.detail?.phone ? (
+            {basicInfo?.detail?.phone ? (
               <a className={styles.link}>
-                <Phone /> {info.basicInfo?.detail?.phone}
+                <Phone /> {basicInfo?.detail?.phone}
               </a>
             ) : (
               <span />
             )}
-            {info.basicInfo?.detail?.linkedin ? (
+            {basicInfo?.detail?.linkedin ? (
               <a className={styles.link}>
-                <Linkedin /> {info.basicInfo?.detail?.linkedin}
+                <Linkedin /> {basicInfo?.detail?.linkedin}
               </a>
             ) : (
               <span />
             )}
-            {info.basicInfo?.detail?.github ? (
+            {basicInfo?.detail?.github ? (
               <a className={styles.link}>
-                <GitHub /> {info.basicInfo?.detail?.github}
+                <GitHub /> {basicInfo?.detail?.github}
               </a>
             ) : (
               <span />

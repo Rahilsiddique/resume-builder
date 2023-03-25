@@ -1,20 +1,22 @@
-import { UPDATE_DETAILS } from "./resumeAction";
-
-const resumereducer = (state, action) => {
-  console.log(state, action);
+export const resumeReducer = (state, action) => {
   switch (action.type) {
-    case UPDATE_DETAILS:
+    case "UPDATE_BASICINFO":
       return {
         ...state,
-        [action.section]: {
-          ...state[action.section],
-          points: action.payload,
-          sectionTitle: action.section
+        [action.payload.name]: {
+          ...state[action.payload.name],
+          detail: action.payload.detail
+        }
+      };
+    case "UPDATE_LIST":
+      return {
+        ...state,
+        [action.payload.name]: {
+          ...state[action.payload.name],
+          details: action.payload.detail
         }
       };
     default:
       return state;
   }
 };
-
-export default resumereducer;
