@@ -6,22 +6,14 @@ import {
   Linkedin,
   MapPin,
   Paperclip,
-  Phone
+  Phone,
 } from "react-feather";
-import { useResumeContext } from "../../context/Context";
 
 import styles from "./Resume.module.css";
 
 const Resume = forwardRef((props, ref) => {
   const information = props.information;
   const sections = props.sections;
-  
-  const {state, valuesT} = useResumeContext()
-
-  console.log(state,valuesT);
-
-  const basicInfo = state["Basic Info"]
-
   const containerRef = useRef();
 
   const [columns, setColumns] = useState([[], []]);
@@ -35,7 +27,7 @@ const Resume = forwardRef((props, ref) => {
     education: information[sections.education],
     basicInfo: information[sections.basicInfo],
     summary: information[sections.summary],
-    other: information[sections.other]
+    other: information[sections.other],
   };
 
   const getFormattedDate = (value) => {
@@ -263,7 +255,7 @@ const Resume = forwardRef((props, ref) => {
           <p className={styles.overview}>{info?.other?.detail}</p>
         </div>
       </div>
-    )
+    ),
   };
 
   const swapSourceTarget = (source, target) => {
@@ -296,7 +288,7 @@ const Resume = forwardRef((props, ref) => {
   useEffect(() => {
     setColumns([
       [sections.project, sections.education, sections.summary],
-      [sections.workExp, sections.achievement, sections.other]
+      [sections.workExp, sections.achievement, sections.other],
     ]);
   }, []);
 
@@ -312,38 +304,37 @@ const Resume = forwardRef((props, ref) => {
   }, [props.activeColor]);
 
   return (
-    <div ref={ref} style={{ fontFamily: props.activeFont }}>
+    <div ref={ref}>
       <div ref={containerRef} className={styles.container}>
         <div className={styles.header}>
-          {/* <p className={styles.heading}>{info.basicInfo?.detail?.name}</p> */}
-          <p className={styles.heading}>{basicInfo.detail.name}</p>
-          <p className={styles.subHeading}>{basicInfo.detail.title}</p>
+          <p className={styles.heading}>{info.basicInfo?.detail?.name}</p>
+          <p className={styles.subHeading}>{info.basicInfo?.detail?.title}</p>
 
           <div className={styles.links}>
-            {basicInfo?.detail?.email ? (
-              <a className={styles.link} type="email" >
-                <AtSign /> {basicInfo?.detail?.email}
+            {info.basicInfo?.detail?.email ? (
+              <a className={styles.link} type="email">
+                <AtSign /> {info.basicInfo?.detail?.email}
               </a>
             ) : (
               <span />
             )}
-            {basicInfo?.detail?.phone ? (
+            {info.basicInfo?.detail?.phone ? (
               <a className={styles.link}>
-                <Phone /> {basicInfo?.detail?.phone}
+                <Phone /> {info.basicInfo?.detail?.phone}
               </a>
             ) : (
               <span />
             )}
-            {basicInfo?.detail?.linkedin ? (
+            {info.basicInfo?.detail?.linkedin ? (
               <a className={styles.link}>
-                <Linkedin /> {basicInfo?.detail?.linkedin}
+                <Linkedin /> {info.basicInfo?.detail?.linkedin}
               </a>
             ) : (
               <span />
             )}
-            {basicInfo?.detail?.github ? (
+            {info.basicInfo?.detail?.github ? (
               <a className={styles.link}>
-                <GitHub /> {basicInfo?.detail?.github}
+                <GitHub /> {info.basicInfo?.detail?.github}
               </a>
             ) : (
               <span />
