@@ -18,5 +18,7 @@
 ## Contribution
 if you want to contribute to this project please refer [CONTRIBUTING.md](https://github.com/Rahilsiddique/resume-builder/blob/main/CONTRIBUTING.md)
 
-### Author 
-- ### [Rahil](https://github.com/Rahilsiddique) 
+### Shout-out
+[![Stargazers repo roster for @Rahilsiddique/resume-builder](https://reporoster.com/stars/dark/Rahilsiddique/resume-builder)](https://github.com/Rahilsiddique/resume-builder/stargazers)
+
+[![Forkers repo roster for @Rahilsiddique/resume-builder](https://reporoster.com/forks/dark/Rahilsiddique/resume-builder)](https://github.com/Rahilsiddique/resume-builder/network/members)
